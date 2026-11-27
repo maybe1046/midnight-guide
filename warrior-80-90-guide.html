@@ -113,7 +113,7 @@
   <tr><td>Versatility</td><td>4%</td></tr>
   <tr><td>Leech</td><td>3%</td></tr>
   <tr><td>Health</td><td>93,740</td><td></td></tr>
-  <tr><td>Talents</td><td>"N/D" (none shown)</td><td>Press <kbd>N</kbd> and import the build in <a href="#build">section 4</a> before you leave the city.</td></tr>
+  <tr><td>Talents</td><td>"N/D" (the armory can't show modern talents)</td><td>The in-game screenshot shows most points unspent. Set them by hand (<a href="#manual">section 4.0a</a>) before you leave the city.</td></tr>
   <tr><td>Professions</td><td>None</td><td>Learn Mining plus Blacksmithing or Herbalism.</td></tr>
   <tr><td>Mounts</td><td>5</td><td>Highland Drake, Renewed Proto-Drake, Windborne Velocidrake, Cliffside Wylderdrake, Retrained Skyrazor. All of them can skyride.</td></tr>
 </table>
@@ -128,7 +128,7 @@
 <h3>1.2 Your to-do list</h3>
 <ol>
   <li>Get an off-hand weapon (if you play Fury).</li>
-  <li>Import the talent build (<a href="#build">section 4</a>) and drag the new abilities onto your bars.</li>
+  <li>Set your talents <b>by hand</b> (<a href="#manual">section 4.0a</a>), because import strings don't work on Firestorm. Then drag the new abilities onto your bars.</li>
   <li>Learn two professions.</li>
   <li>Follow the setup list below, then head to Eversong Woods.</li>
 </ol>
@@ -202,17 +202,59 @@
 <!-- ============================================================ -->
 <h2 id="build">4. Your talent build</h2>
 
-<h3>4.0 Recommended: Icy Veins Fury leveling build (Mountain Thane)</h3>
-<p>Copied from the <a href="https://www.icy-veins.com/wow/fury-warrior-leveling-guide">Icy Veins Fury Leveling Guide</a> (updated for 12.1.5). It's made as a starting point for level 80. The page labels it "Arms Midnight Leveling Build", but that's a typo: the trees in it are Warrior + Fury + Mountain Thane.</p>
+<h3>4.0 Recommended: Fury leveling build for 12.0.7 (matches Firestorm)</h3>
+<div class="box warn"><b>Why the trees online looked different:</b> in early Midnight (12.0.x), <b>Rend was in the Warrior class tree</b>. Blizzard made Rend Arms-only in patch 12.1. Firestorm's Silvermoon realm uses <b>12.0.7</b> class balance, so your in-game tree has Rend in the class tree and current (12.1.5) guides don't match it. Use the 12.0.7 build below.</div>
+<p>This build comes from the <a href="https://web.archive.org/web/20260725072650/https://www.icy-veins.com/wow/fury-warrior-leveling-guide">Icy Veins Fury Leveling Guide as it was in July 2026</a> (archived copy). The page says "Reviewed for Patch 12.0.7" (15 June 2026), which is the version that matches your realm.</p>
 <div class="box note">
-<p><b>Import string</b> (select it all and copy):</p>
-<div class="scroll"><code>CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDmZmZ2WmZmZMmxMzMzMzMz2MzYmxsMmZGAAIMwGssY0YGAzCGWAMDmNAYmBwgFGGMG</code></div>
-<p>To preview the full tree, <a href="https://www.icy-veins.com/wow/midnight-talent-calculator#IB-CIOHnBENakz4qUCBFFxYZUsocaa85BMBD7D-EHJzu0aKiUEgwwAmAhgwUVNGw9sQxYA-AAAA-SAEYg0wsQM4QRQ-">open it in the Icy Veins talent calculator</a>.</p>
+<p><b>Fury Level 80 Midnight Leveling (12.0.7)</b>: select it all and copy:</p>
+<div class="scroll"><code>CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDMzMzmZmHYGjZMzMzYMzsNzMGjZZMzMAAQYgNYhRDDgZBDLAGbGbDAMDghZmxwA</code></div>
 </div>
-<p><b>To import it:</b> press <kbd>N</kbd>, open the loadout dropdown, choose <b>Import</b>, paste the string, click <b>Import</b>, then <b>Apply Changes</b>. Then drag any new abilities from the spellbook (<kbd>P</kbd>) onto your bars. See <a href="#talents">section 3.4</a> for more detail.</p>
+<details>
+<summary>Older 12.1.5 string (doesn't match Firestorm, kept for reference)</summary>
+<div class="scroll"><code>CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDmZmZ2WmZmZMmxMzMzMzMz2MzYmxsMmZGAAIMwGssY0YGAzCGWAMDmNAYmBwgFGGMG</code></div>
+</details>
+<h3 id="manual">4.0a The import string doesn't work on Firestorm: set talents by hand</h3>
+<div class="box warn"><b>Tested 27 November 2026:</b> importing the 12.0.7 string on Silvermoon gave a broken loadout. Firestorm's Warrior tree differs from Blizzard's, even at 12.0.7. <b>Don't use import strings on this realm.</b> Pick the talents by hand using the steps below.</div>
+
+<p><img src="talent.png" alt="In-game talent window after the failed import: red invalid nodes and unspent points" style="max-width:100%;border:1px solid var(--line)"></p>
+<p><b>What the screenshot shows:</b></p>
+<ul>
+  <li><b>Unspent points:</b> Warrior 8, Fury 28, and Hero 10 with no hero tree chosen.</li>
+  <li><b>Red nodes are invalid picks.</b> The import put points where the tree won't accept them. Row 2 of the class tree (the four green nodes marked "0") is empty, so the lock that needs 8 points above it stays closed, and every red node below it can't be learned.</li>
+  <li>The Fury tree is almost empty, with two red, invalid picks.</li>
+  <li><b>Apply Changes</b> is still glowing, so nothing has been saved. The loadout is named after the pasted string ("CgEAAAA…").</li>
+  <li>The class tree has <b>Rend</b> in it, from the early Midnight design. Fury doesn't need it unless a path goes through it.</li>
+</ul>
+
+<p><b>How to fix it, step by step:</b></p>
+<ol>
+  <li><b>Clear the broken import:</b> click the circular undo arrow to the right of <b>Apply Changes</b>.</li>
+  <li><b>Hero tree:</b> click the big circle in the middle and choose the <b>left (blue lightning) side, Mountain Thane</b>. Spend all 10 points.</li>
+  <li><b>Class tree (left):</b> work from top to bottom. <b>Fill row 2 first</b> to open the 8-point lock. Use the <b>Search box</b> at the bottom of the window: type a talent name and the game highlights where it is. Take these when you can reach them:
+    <ul>
+      <li><b>Movement:</b> Heroic Leap, Bounding Stride, Fast Footwork, Double Time</li>
+      <li><b>Survival:</b> Impending Victory, Second Wind, Pain and Gain, Armored to the Teeth, Reinforced Plates, Spell Reflection</li>
+      <li><b>Damage and control:</b> War Machine, Thunder Clap, Storm Bolt, Shockwave, Piercing Howl, Crushing Force, Wild Strikes, Avatar</li>
+    </ul>
+  </li>
+  <li><b>Fury tree (right):</b> work from top to bottom, using Search again. In rough priority:
+    <ul>
+      <li><b>Core:</b> Bloodthirst, Raging Blow, Rampage, Recklessness, Odyn's Fury, Enraged Regeneration</li>
+      <li><b>Group damage:</b> Improved Whirlwind, Meat Cleaver</li>
+      <li><b>Damage:</b> Powerful Enrage, Improved Execute, Sudden Death, Fresh Meat, Improved Raging Blow, Cruelty, Frenzy, Reckless Abandon, Frothing Berserker, Bloodborne</li>
+      <li><b>Bottom of the tree:</b> from level 81, the Apex talent <b>Rampaging Berserker</b></li>
+    </ul>
+  </li>
+  <li>If a name doesn't come up in Search, the node isn't in Firestorm's tree. Take a nearby node whose tooltip mentions <b>Rampage, Whirlwind, Enrage, "all enemies" or healing</b>.</li>
+  <li>Click <b>Apply Changes</b>, then save the loadout with a proper name, for example "Leveling".</li>
+  <li>Open the spellbook (<kbd>P</kbd>) and drag new abilities (Odyn's Fury, Recklessness, Avatar, Thunder Blast) onto your bars.</li>
+</ol>
+
+<p><b>To import it</b> (on official servers only; on Firestorm use 4.0a above): press <kbd>N</kbd>, open the loadout dropdown, choose <b>Import</b>, paste the string, click <b>Import</b>, then <b>Apply Changes</b>. Then drag any new abilities from the spellbook (<kbd>P</kbd>) onto your bars. See <a href="#talents">section 3.4</a> for more detail.</p>
 <p>Key talents already in the build: Impending Victory, Second Wind, Heroic Leap, Bounding Stride, Fast Footwork, Spell Reflection, Storm Bolt, Thunder Clap, Shockwave, Piercing Howl, Improved Whirlwind, Meat Cleaver, Rampage, Recklessness, Odyn's Fury, Avatar, Enraged Regeneration, Rampaging Ruin, Dual Wield Specialization.</p>
 
 <h3>4.1 Where to put new points from 81 to 90</h3>
+<p><b>Note:</b> this order comes from the 12.1.5 guide, because the archived 12.0.7 page didn't save its level-by-level list. Use it as a guide to talent names. If a talent isn't in your tree, take the closest node that improves Rampage, Whirlwind/Thunder Clap or survival. The Apex talent at the bottom of the spec tree is always the first priority.</p>
 <div class="scroll">
 <table>
   <tr><th>Level</th><th>Talent</th><th>Tree</th></tr>
@@ -288,6 +330,27 @@
   <li>Use <b>Impending Victory</b> whenever your health drops below about 70%.</li>
   <li>When the last mob dies, run to the next pack. Second Wind heals you on the way.</li>
 </ol>
+
+<h3>5.1b Fury at level 80 on 12.0.7 (from Icy Veins, Mountain Thane)</h3>
+<p>This is the exact priority from the 12.0.7 Icy Veins leveling guide. It matches your realm's build. Use the highest one that's ready:</p>
+<ol>
+  <li><b>Charge</b> to start combat whenever possible.</li>
+  <li><b>Victory Rush</b> after killing an enemy, for free damage and healing.</li>
+  <li><b>Thunder Blast</b> whenever it's available.</li>
+  <li><b>Thunder Clap</b> to keep the Improved Whirlwind buff up against several mobs.</li>
+  <li><b>Bloodthirst</b> to keep yourself <b>Enraged</b>.</li>
+  <li><b>Rampage</b> to spend rage and stay Enraged.</li>
+  <li><b>Recklessness</b> on large groups or strong enemies.</li>
+  <li><b>Avatar</b> on large groups or strong enemies.</li>
+  <li><b>Odyn's Fury</b> while Enraged, for high burst damage.</li>
+  <li><b>Thunder Clap</b> against several mobs.</li>
+  <li><b>Execute</b> whenever possible.</li>
+  <li><b>Raging Blow</b> or <b>Crushing Blow</b> as filler.</li>
+  <li><b>Whirlwind</b> to fill any gaps.</li>
+</ol>
+<div class="box note"><b>Recuperate:</b> out of combat, this ability always restores <b>50% of your maximum health</b>, so you don't need food. Put it on your bars and use it between pulls.<br>
+<b>War Mode PvP talents</b> (if War Mode is on): Rebound (stronger Spell Reflection), Enduring Rage (more Rampages), Dragon Charge (more mobility).</div>
+<p>The simplified lists below still work as a reminder, but the list above is the one to follow.</p>
 
 <h3>5.2 Fury: group of mobs (2+)</h3>
 <ol>
