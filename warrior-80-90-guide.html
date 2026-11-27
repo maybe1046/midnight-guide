@@ -51,7 +51,7 @@
   th, td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
   th { background: var(--head); }
   kbd { border: 1px solid var(--line); padding: 0 5px; font-family: Consolas, monospace; font-size: 14px; }
-  code { font-family: Consolas, monospace; font-size: 14px; }
+  code { font-family: Consolas, monospace; font-size: 14px; word-break: break-all; }
   ol li, ul li { margin-bottom: 4px; }
   .toc { columns: 2; }
   @media (max-width: 560px) { .toc { columns: 1; } }
@@ -60,14 +60,15 @@
 <body>
 
 <h1>Firestorm Warrior Leveling</h1>
-<p class="sub">Boosted level 80 Warrior to 90 · Firestorm realm, patch 12.0.2 · First character · Returning from WotLK</p>
+<p class="sub">Boosted level 80 Warrior to 90 · Firestorm, Silvermoon realm (client 12.0.7, content 12.0.2, x1 XP) · First character · Returning from WotLK</p>
 
 <h3>Contents</h3>
 <ol class="toc">
   <li><a href="#situation">Your situation</a></li>
+  <li><a href="#character">Your character (Creueel)</a></li>
   <li><a href="#setup">Before you start</a></li>
   <li><a href="#talents">How to do your talents</a></li>
-  <li><a href="#build">What to pick</a></li>
+  <li><a href="#build">Your talent build</a></li>
   <li><a href="#rotation">Rotation for killing mobs</a></li>
   <li><a href="#survive">Staying alive</a></li>
   <li><a href="#route">The route</a></li>
@@ -81,11 +82,56 @@
 
 <!-- ============================================================ -->
 <h2 id="situation">1. Your situation</h2>
+<div class="box note"><b>Firestorm's Midnight realm, from <a href="https://firestorm-servers.com/news/612">their launch post</a> and <a href="https://firestorm-servers.com/welcome/realms">realm list</a> (checked 27 November 2026):</b>
 <ul>
-  <li><b>Patch 12.0.2</b> is the launch-era build. The big XP buffs for delves, dungeon quests and weekly Renown came later, in 12.0.7. Expect leveling to take 6–10 hours, not the 1.5-hour speedrun times you see online.</li>
+  <li><b>Realm:</b> Silvermoon, PvE, <b>x1 XP</b> (the same rate as official servers). It launched on 23 November 2026.</li>
+  <li><b>Version:</b> "The client will actually run on version 12.0.7, but the content will be from patch 12.0.2, and class balance will reflect 12.0.7."</li>
+  <li><b>Content:</b> level cap 90. Eversong Woods / Quel'Thalas, Zul'Aman, Harandar and Voidstorm, plus Silvermoon City. All 5 leveling dungeons are open from launch.</li>
+  <li><b>Season 1</b> (Mythic+, raids, PvP, harder delves) starts on <b>7 December 2026</b>.</li>
+  <li><b>Client:</b> download it with the Firestorm launcher, or update an existing The War Within client.</li>
+  <li><b>Boost:</b> a level 80 boost was offered during the first week (23–30 November).</li>
+</ul>
+</div>
+<ul>
+  <li><b>Content 12.0.2</b> means the launch-era quests and zones. The big XP buffs for delves, dungeon quests and weekly Renown came with 12.0.7 content, so they're probably missing here. Firestorm doesn't say either way. Expect leveling to take 6–10 hours at x1, not the 1.5-hour speedrun times you see online.</li>
+  <li><b>Class balance 12.0.7</b> means Warrior talents and tuning match 12.0.7. Talent builds made for <b>12.0.7</b> should work. Builds tagged 12.1 or 12.1.5 may not.</li>
   <li><b>First character:</b> you get no Warband Mentor XP bonus (that needs max-level alts), and you have no gold or crafted gear from other characters.</li>
   <li><b>Private server:</b> Firestorm isn't an official Blizzard realm. Quests, XP and talents may differ from retail guides. If a quest won't complete, check the server's Discord or bug tracker.</li>
 </ul>
+
+<h3 id="character">1.1 Your character: Creueel @ Silvermoon</h3>
+<p class="sub">From the <a href="https://firestorm-servers.com/en/community/armory/11/14/17438825">Firestorm armory</a> (you have to be logged in to see it), checked 27 November 2026.</p>
+<div class="scroll">
+<table>
+  <tr><th>Item</th><th>Value</th><th>What it means</th></tr>
+  <tr><td>Race / class / level</td><td>Orc Warrior, 80</td><td>Orcs get Blood Fury (extra attack power for a short time). Use it with your big cooldowns.</td></tr>
+  <tr><td>Average item level</td><td><b>126</b></td><td>All blue boost gear. Quest rewards in Eversong start replacing it. Equip anything with higher item level.</td></tr>
+  <tr><td>Gear slots</td><td>All 16 filled</td><td>Head, neck, shoulders, cloak, chest, bracers, gloves, belt, legs, boots, 2 rings, 2 trinkets. Shirt and tabard are empty, but they're only cosmetic.</td></tr>
+  <tr><td>Weapon</td><td><b>One two-handed axe</b>, off-hand empty</td><td>That's an Arms setup. <b>Fury needs a weapon in each hand.</b> See the box below.</td></tr>
+  <tr><td>Critical Strike</td><td>33.85%</td><td rowspan="4">Fine for leveling. Ignore stats until 90. Mastery at 0% is probably an armory display bug.</td></tr>
+  <tr><td>Haste</td><td>15.95%</td></tr>
+  <tr><td>Versatility</td><td>4%</td></tr>
+  <tr><td>Leech</td><td>3%</td></tr>
+  <tr><td>Health</td><td>93,740</td><td></td></tr>
+  <tr><td>Talents</td><td>"N/D" (none shown)</td><td>Press <kbd>N</kbd> and import the build in <a href="#build">section 4</a> before you leave the city.</td></tr>
+  <tr><td>Professions</td><td>None</td><td>Learn Mining plus Blacksmithing or Herbalism.</td></tr>
+  <tr><td>Mounts</td><td>5</td><td>Highland Drake, Renewed Proto-Drake, Windborne Velocidrake, Cliffside Wylderdrake, Retrained Skyrazor. All of them can skyride.</td></tr>
+</table>
+</div>
+<div class="box warn"><b>Fix your weapon first.</b> You have one two-handed axe and an empty off-hand.
+<ul>
+  <li><b>To play Fury</b> (the build in section 4): get a second weapon for your off-hand. Fury can hold two two-handed weapons, so a cheap two-hander from the Auction House, a quest or a dungeon works. Even a low item level weapon is far better than an empty hand.</li>
+  <li><b>To play Arms:</b> your current axe is already correct. Switch spec in <kbd>N</kbd> → Specializations, and use an Arms leveling build instead.</li>
+</ul>
+</div>
+
+<h3>1.2 Your to-do list</h3>
+<ol>
+  <li>Get an off-hand weapon (if you play Fury).</li>
+  <li>Import the talent build (<a href="#build">section 4</a>) and drag the new abilities onto your bars.</li>
+  <li>Learn two professions.</li>
+  <li>Follow the setup list below, then head to Eversong Woods.</li>
+</ol>
 
 <!-- ============================================================ -->
 <h2 id="setup">2. Before you start</h2>
@@ -144,7 +190,7 @@
   <li>Click <b>Apply Changes</b>.</li>
   <li>Open the spellbook (<kbd>P</kbd>) and drag any new active ability onto your bars. New abilities don't always land on a bar by themselves.</li>
 </ol>
-<div class="box warn"><b>Patch warning:</b> a build made for a different patch can fail to import, or leave nodes empty. Your realm runs 12.0.2, and most guides are now updated for 12.1–12.1.5. If an import fails, pick the talents yourself using the next section. That's also the best way to learn the trees.</div>
+<div class="box warn"><b>Patch warning:</b> a build made for a different patch can fail to import, or leave nodes empty. Silvermoon uses <b>12.0.7 class balance</b>, so look for builds from June–August 2026 (patch 12.0.7). Most guides are now updated for 12.1–12.1.5, which is newer than your realm. If an import fails, pick the talents yourself using the next section. That's also the best way to learn the trees.</div>
 
 <h3>3.5 Saving loadouts</h3>
 <p>Make two loadouts and switch with the dropdown:</p>
@@ -154,10 +200,53 @@
 </ul>
 
 <!-- ============================================================ -->
-<h2 id="build">4. What to pick (leveling priorities)</h2>
+<h2 id="build">4. Your talent build</h2>
+
+<h3>4.0 Recommended: Icy Veins Fury leveling build (Mountain Thane)</h3>
+<p>Copied from the <a href="https://www.icy-veins.com/wow/fury-warrior-leveling-guide">Icy Veins Fury Leveling Guide</a> (updated for 12.1.5). It's made as a starting point for level 80. The page labels it "Arms Midnight Leveling Build", but that's a typo: the trees in it are Warrior + Fury + Mountain Thane.</p>
+<div class="box note">
+<p><b>Import string</b> (select it all and copy):</p>
+<div class="scroll"><code>CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDmZmZ2WmZmZMmxMzMzMzMz2MzYmxsMmZGAAIMwGssY0YGAzCGWAMDmNAYmBwgFGGMG</code></div>
+<p>To preview the full tree, <a href="https://www.icy-veins.com/wow/midnight-talent-calculator#IB-CIOHnBENakz4qUCBFFxYZUsocaa85BMBD7D-EHJzu0aKiUEgwwAmAhgwUVNGw9sQxYA-AAAA-SAEYg0wsQM4QRQ-">open it in the Icy Veins talent calculator</a>.</p>
+</div>
+<p><b>To import it:</b> press <kbd>N</kbd>, open the loadout dropdown, choose <b>Import</b>, paste the string, click <b>Import</b>, then <b>Apply Changes</b>. Then drag any new abilities from the spellbook (<kbd>P</kbd>) onto your bars. See <a href="#talents">section 3.4</a> for more detail.</p>
+<p>Key talents already in the build: Impending Victory, Second Wind, Heroic Leap, Bounding Stride, Fast Footwork, Spell Reflection, Storm Bolt, Thunder Clap, Shockwave, Piercing Howl, Improved Whirlwind, Meat Cleaver, Rampage, Recklessness, Odyn's Fury, Avatar, Enraged Regeneration, Rampaging Ruin, Dual Wield Specialization.</p>
+
+<h3>4.1 Where to put new points from 81 to 90</h3>
+<div class="scroll">
+<table>
+  <tr><th>Level</th><th>Talent</th><th>Tree</th></tr>
+  <tr><td>81</td><td>Rampaging Berserker (1/4)</td><td>Spec (Apex)</td></tr>
+  <tr><td>82</td><td>Cruel Strikes (1/2)</td><td>Class</td></tr>
+  <tr><td>83</td><td>Burst of Power</td><td>Hero</td></tr>
+  <tr><td>84</td><td>Rampaging Berserker (2/4)</td><td>Spec (Apex)</td></tr>
+  <tr><td>85</td><td>Cruel Strikes (2/2)</td><td>Class</td></tr>
+  <tr><td>86</td><td>Storm Bolts</td><td>Hero</td></tr>
+  <tr><td>87</td><td>Rampaging Berserker (3/4)</td><td>Spec (Apex)</td></tr>
+  <tr><td>88</td><td>Anger Management</td><td>Class</td></tr>
+  <tr><td>89</td><td>Thorim's Might</td><td>Hero</td></tr>
+  <tr><td>90</td><td>Rampaging Berserker (4/4)</td><td>Spec (Apex)</td></tr>
+</table>
+</div>
+<p>Mountain Thane hero talents already taken at 80: Crashing Thunder, Thunder Blast, Flashing Skies, Avatar of the Storm, Strength of the Mountain, Storm Surge, Conductivity, Capacitance, Ground Current, Keep Your Feet on the Ground.</p>
+
+<h3>4.2 Other builds (Method.gg, for level 90)</h3>
+<p>These come from <a href="https://www.method.gg/guides/fury-warrior/talents">Method.gg</a> (12.1.5). They're full level 90 builds, so at 80 the game may not import all of them. Use them once you're 90, or save one as a second loadout.</p>
+<div class="scroll">
+<table>
+  <tr><th>Build</th><th>Use for</th><th>String</th></tr>
+  <tr><td>Mountain Thane, AoE</td><td>Groups of mobs, dungeons</td><td><code>CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDDzMz2yMmZmxMmZMjZMzyMzYMzsMmZGAAIMwGssZ0YGQmFMjFAzgxAgZGADzMzMMYA</code></td></tr>
+  <tr><td>Mountain Thane, Single Target</td><td>Elites and bosses</td><td><code>CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDDzMz2yMzMzMMmZmZMjZWmZGjZmlxMzAAAhB2glNjGzAysgZsAYGMGAMzAYYMzMMYA</code></td></tr>
+  <tr><td>Slayer, AoE</td><td>Groups, with more burst damage</td><td><code>CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDDmZ2WmZmZmxMmZMjZMzyMzYMzsNmZGAAIGLLDsAmgZYCMDbAmZjxAAgZGDzMzMMYA</code></td></tr>
+  <tr><td>Slayer, Single Target</td><td>Single target</td><td><code>CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDDmx2yMzMzMmxMzMjZmZWmZGjZmthZGAAIGLLDsAmgZYCMDbAzMbMGAAMzYYMzMMYA</code></td></tr>
+</table>
+</div>
+<div class="box warn"><b>Patch note:</b> all of these builds were made for 12.1.5. Silvermoon uses 12.0.7 class balance, so if an import fails or leaves nodes empty, fill them in yourself using the lists above and in 4.3.</div>
+
+<h3>4.3 Picking talents yourself (leveling priorities)</h3>
 <p>If you pick talents yourself, take them in this order of importance. For leveling, survival and AoE matter more than single-target damage.</p>
 
-<h3>4.1 Hero talent</h3>
+<h3>Hero talent</h3>
 <div class="scroll">
 <table>
   <tr><th>Spec</th><th>Pick for leveling</th><th>Why</th></tr>
@@ -167,7 +256,7 @@
 </table>
 </div>
 
-<h3>4.2 Class tree, the leveling must-haves</h3>
+<h3>Class tree, the leveling must-haves</h3>
 <ul>
   <li><b>Impending Victory</b>: replaces Victory Rush so you can heal at any time, not only after a kill. It's the most important leveling talent.</li>
   <li><b>Second Wind</b>: regenerates health when you're not taking damage. Less downtime between pulls.</li>
@@ -178,7 +267,7 @@
   <li><b>Avatar</b> and <b>Thunderous Roar</b>: big damage cooldowns for large pulls.</li>
 </ul>
 
-<h3>4.3 Spec tree</h3>
+<h3>Spec tree</h3>
 <ul>
   <li>Take every node that improves <b>Whirlwind</b> or <b>cleave</b> (Fury), or <b>Sweeping Strikes / Cleave / Bladestorm</b> (Arms).</li>
   <li>Take your big cooldowns: <b>Recklessness</b> and <b>Odyn's Fury</b> (Fury), <b>Bladestorm</b> (Arms).</li>
@@ -308,7 +397,8 @@
 <div class="box note"><b>Fast queue trick:</b> queue as a <b>tank</b> (Protection). Tank queues pop almost instantly. Switch to Prot at the dungeon entrance and back to Fury or Arms afterwards.</div>
 
 <!-- ============================================================ -->
-<h2 id="xp">9. XP sources on 12.0.2</h2>
+<h2 id="xp">9. XP sources on Silvermoon (12.0.2 content, x1)</h2>
+<p>Firestorm doesn't say whether the 12.0.7 XP buffs are on. Watch how much XP your first delve and dungeon quest give, and change your plan if they give a lot.</p>
 <div class="scroll">
 <table>
   <tr><th>Source</th><th>Available?</th><th>Notes</th></tr>
@@ -359,6 +449,9 @@
 <!-- ============================================================ -->
 <h2 id="sources">13. Sources</h2>
 <ul>
+  <li><a href="https://firestorm-servers.com/news/612">Firestorm: Midnight launch post</a> (version, content, Season 1 date)</li>
+  <li><a href="https://firestorm-servers.com/welcome/realms">Firestorm: realm list</a> (Silvermoon, PvE x1)</li>
+  <li><a href="https://firestorm-servers.com/news/dev">Firestorm: changelog</a> (Midnight bug fixes)</li>
   <li><a href="https://worldofwarcraft.blizzard.com/news/24230699">Blizzard: Level Up Your Talents in Midnight</a> (the 10 new points)</li>
   <li><a href="https://news.blizzard.com/en-us/article/24244472/power-up-with-new-apex-talents-in-midnight">Blizzard: Apex Talents in Midnight</a></li>
   <li><a href="https://warcraft.wiki.gg/wiki/Talent_Tree">Warcraft Wiki: Talent Tree</a></li>
