@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Firestorm Warrior Leveling</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #222222;
+    --muted: #666666;
+    --line: #dddddd;
+    --head: #f4f4f4;
+    --link: #1a5fb4;
+    --note: #fff8e1;
+    --warn: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1b1b1b;
+      --text: #e6e6e6;
+      --muted: #a0a0a0;
+      --line: #3a3a3a;
+      --head: #262626;
+      --link: #78aeff;
+      --note: #33301f;
+      --warn: #3a2422;
+      color-scheme: dark;
+    }
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 16px 60px;
+  }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 22px; margin-top: 40px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  h3 { font-size: 18px; margin-top: 24px; }
+  a { color: var(--link); }
+  .sub { color: var(--muted); margin-top: 0; }
+  .box { padding: 10px 14px; border: 1px solid var(--line); margin: 16px 0; }
+  .note { background: var(--note); }
+  .warn { background: var(--warn); }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  th, td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--head); }
+  kbd { border: 1px solid var(--line); padding: 0 5px; font-family: Consolas, monospace; font-size: 14px; }
+  code { font-family: Consolas, monospace; font-size: 14px; }
+  ol li, ul li { margin-bottom: 4px; }
+  .toc { columns: 2; }
+  @media (max-width: 560px) { .toc { columns: 1; } }
+</style>
+</head>
+<body>
+
+<h1>Firestorm Warrior Leveling</h1>
+<p class="sub">Boosted level 80 Warrior to 90 · Firestorm realm, patch 12.0.2 · First character · Returning from WotLK</p>
+
+<h3>Contents</h3>
+<ol class="toc">
+  <li><a href="#situation">Your situation</a></li>
+  <li><a href="#setup">Before you start</a></li>
+  <li><a href="#talents">How to do your talents</a></li>
+  <li><a href="#build">What to pick</a></li>
+  <li><a href="#rotation">Rotation for killing mobs</a></li>
+  <li><a href="#survive">Staying alive</a></li>
+  <li><a href="#route">The route</a></li>
+  <li><a href="#dungeons">Dungeons</a></li>
+  <li><a href="#xp">XP sources</a></li>
+  <li><a href="#gear">Gear and gold</a></li>
+  <li><a href="#changed">New since WotLK</a></li>
+  <li><a href="#ninety">At level 90</a></li>
+  <li><a href="#sources">Sources</a></li>
+</ol>
+
+<!-- ============================================================ -->
+<h2 id="situation">1. Your situation</h2>
+<ul>
+  <li><b>Patch 12.0.2</b> is the launch-era build. The big XP buffs for delves, dungeon quests and weekly Renown came later, in 12.0.7. Expect leveling to take 6–10 hours, not the 1.5-hour speedrun times you see online.</li>
+  <li><b>First character:</b> you get no Warband Mentor XP bonus (that needs max-level alts), and you have no gold or crafted gear from other characters.</li>
+  <li><b>Private server:</b> Firestorm isn't an official Blizzard realm. Quests, XP and talents may differ from retail guides. If a quest won't complete, check the server's Discord or bug tracker.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="setup">2. Before you start</h2>
+<ol>
+  <li><b>Auto-Loot:</b> Esc → Options → Controls → Auto Loot.</li>
+  <li><b>Interact key:</b> Options → Keybindings → "Interact with Target". Press it to loot and talk to NPCs without clicking.</li>
+  <li><b>Talents:</b> follow <a href="#talents">section 3</a> before you leave the city.</li>
+  <li><b>Action bars:</b> put your main attacks on <kbd>1</kbd>–<kbd>6</kbd> and your defensives on <kbd>Shift</kbd>+key or the mouse buttons.</li>
+  <li><b>Practise on a dummy:</b> spend 5 minutes on a training dummy in a capital city until the rotation in <a href="#rotation">section 5</a> feels natural.</li>
+  <li><b>Edit Mode:</b> Esc → Edit Mode lets you move the UI without addons.</li>
+  <li><b>Professions:</b> take Mining + Blacksmithing, or Mining + Herbalism for gold.</li>
+  <li><b>Empty your bags</b> of boost leftovers.</li>
+  <li><b>Hearthstone:</b> set it to Sanctum of Light when you reach Eversong.</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2 id="talents">3. How to do your talents</h2>
+
+<h3>3.1 The talent window</h3>
+<p>Press <kbd>N</kbd>. The window has two tabs at the bottom: <b>Specializations</b> (switch between Arms, Fury and Protection) and <b>Talents</b> (spend points).</p>
+<div class="scroll">
+<table>
+  <tr><th>Part of the window</th><th>What it is</th></tr>
+  <tr><td><b>Class tree</b> (left)</td><td>Warrior abilities every spec can take: Heroic Leap, Rallying Cry, Storm Bolt, Impending Victory and so on. Mostly utility and survival.</td></tr>
+  <tr><td><b>Spec tree</b> (right)</td><td>Your spec's damage talents. This is where your rotation abilities come from. In Midnight, <b>Apex talents</b> sit at the very bottom of this tree.</td></tr>
+  <tr><td><b>Hero talents</b> (top middle)</td><td>A third, smaller tree. Each spec chooses between two hero trees (Fury: Slayer or Mountain Thane). Click the hero icon to choose.</td></tr>
+  <tr><td><b>Loadout dropdown</b> (bottom left)</td><td>Save, switch, import and share whole builds.</td></tr>
+  <tr><td><b>Apply Changes</b> (bottom)</td><td>Nothing changes until you click this.</td></tr>
+</table>
+</div>
+
+<h3>3.2 How the trees work</h3>
+<ul>
+  <li><b>Gates:</b> the trees unlock from top to bottom. You must spend a set number of points higher up before the lower rows open. The number shows next to the locked row.</li>
+  <li><b>Connections:</b> a node can only be taken if a node linked to it by a line above it is already taken.</li>
+  <li><b>Node shapes:</b> a <b>square</b> is an active ability you press. A <b>circle</b> is a passive. An <b>octagon</b> is a choice node: pick one of two options.</li>
+  <li><b>Ranks:</b> some nodes show <code>0/2</code>. Click again to add the second rank.</li>
+  <li><b>Removing points:</b> right-click a node. You can only remove it if nothing below depends on it.</li>
+  <li><b>Changing talents is free.</b> You can do it anywhere when out of combat. There's no gold cost and no trainer.</li>
+</ul>
+
+<h3>3.3 New points from 81 to 90</h3>
+<p>Midnight adds <b>10 new talent points</b> between levels 81 and 90. They rotate between the trees as you level:</p>
+<ul>
+  <li><b>Class tree:</b> 3 points</li>
+  <li><b>Spec tree:</b> 4 points, used on the new <b>Apex talents</b> at the bottom of the spec tree. They start at 81.</li>
+  <li><b>Hero tree:</b> 3 points. At 90 your whole hero tree is filled in.</li>
+</ul>
+<p>When you have an unspent point, the talent icon on your micro-menu lights up. <b>Press <kbd>N</kbd> every time you level up.</b> It's easy to forget and play with points you never spent.</p>
+
+<h3>3.4 Importing a build (the easy way)</h3>
+<ol>
+  <li>On a guide site (Icy Veins, Wowhead, Method), find the talent build and click <b>Copy / Export string</b>. It's a long line of letters.</li>
+  <li>In game press <kbd>N</kbd>, open the <b>loadout dropdown</b> → <b>Import</b>.</li>
+  <li>Paste the string with <kbd>Ctrl</kbd>+<kbd>V</kbd>, give it a name (for example "Leveling AoE"), and click <b>Import</b>.</li>
+  <li>Click <b>Apply Changes</b>.</li>
+  <li>Open the spellbook (<kbd>P</kbd>) and drag any new active ability onto your bars. New abilities don't always land on a bar by themselves.</li>
+</ol>
+<div class="box warn"><b>Patch warning:</b> a build made for a different patch can fail to import, or leave nodes empty. Your realm runs 12.0.2, and most guides are now updated for 12.1–12.1.5. If an import fails, pick the talents yourself using the next section. That's also the best way to learn the trees.</div>
+
+<h3>3.5 Saving loadouts</h3>
+<p>Make two loadouts and switch with the dropdown:</p>
+<ul>
+  <li><b>Questing (AoE):</b> talents that improve Whirlwind, cleave and self-healing.</li>
+  <li><b>Protection (dungeons):</b> switch spec in the Specializations tab. Each spec keeps its own loadouts, so you set Prot up once.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="build">4. What to pick (leveling priorities)</h2>
+<p>If you pick talents yourself, take them in this order of importance. For leveling, survival and AoE matter more than single-target damage.</p>
+
+<h3>4.1 Hero talent</h3>
+<div class="scroll">
+<table>
+  <tr><th>Spec</th><th>Pick for leveling</th><th>Why</th></tr>
+  <tr><td>Fury</td><td><b>Mountain Thane</b></td><td>Lightning damage that hits groups. Best when you're pulling several mobs.</td></tr>
+  <tr><td>Arms</td><td><b>Colossus</b> or <b>Slayer</b></td><td>Colossus has the tougher, heavier hits. Slayer gives more Execute damage.</td></tr>
+  <tr><td>Protection</td><td><b>Mountain Thane</b> or <b>Colossus</b></td><td>Either works for dungeons.</td></tr>
+</table>
+</div>
+
+<h3>4.2 Class tree, the leveling must-haves</h3>
+<ul>
+  <li><b>Impending Victory</b>: replaces Victory Rush so you can heal at any time, not only after a kill. It's the most important leveling talent.</li>
+  <li><b>Second Wind</b>: regenerates health when you're not taking damage. Less downtime between pulls.</li>
+  <li><b>Heroic Leap</b> and <b>Bounding Stride</b>: faster movement between packs.</li>
+  <li><b>Rallying Cry</b>: an emergency boost to maximum health.</li>
+  <li><b>Storm Bolt</b> or <b>Intimidating Shout</b>: control one extra mob.</li>
+  <li><b>Thunder Clap</b>: AoE damage that slows mobs.</li>
+  <li><b>Avatar</b> and <b>Thunderous Roar</b>: big damage cooldowns for large pulls.</li>
+</ul>
+
+<h3>4.3 Spec tree</h3>
+<ul>
+  <li>Take every node that improves <b>Whirlwind</b> or <b>cleave</b> (Fury), or <b>Sweeping Strikes / Cleave / Bladestorm</b> (Arms).</li>
+  <li>Take your big cooldowns: <b>Recklessness</b> and <b>Odyn's Fury</b> (Fury), <b>Bladestorm</b> (Arms).</li>
+  <li>Take passive self-healing and damage reduction nodes.</li>
+  <li>Spend new points from 81 onward on the <b>Apex talents</b>.</li>
+</ul>
+<p>Rule of thumb: <b>read the tooltip</b>. If it says "all enemies", "nearby enemies", "heals you" or "reduces damage taken", it's good for leveling.</p>
+
+<!-- ============================================================ -->
+<h2 id="rotation">5. Rotation for killing mobs</h2>
+<p>A "rotation" in modern WoW is a <b>priority list</b>, not a fixed order. Each time you press a button, use the highest ability on the list that's ready. The lists below are simplified for open-world mobs. Raid rotations are more complex, so don't worry about those yet.</p>
+
+<h3>5.1 How to pull</h3>
+<ol>
+  <li>Choose 3–5 mobs standing close together. More once your gear is better, fewer if they're elites.</li>
+  <li><b>Charge</b> the one in the middle, or <b>Heroic Leap</b> into the pack.</li>
+  <li>Open with your AoE (see the list for your spec below). Mobs bunch up around you.</li>
+  <li>Use <b>Impending Victory</b> whenever your health drops below about 70%.</li>
+  <li>When the last mob dies, run to the next pack. Second Wind heals you on the way.</li>
+</ol>
+
+<h3>5.2 Fury: group of mobs (2+)</h3>
+<ol>
+  <li><b>Whirlwind</b>: press it first. It makes your next single-target attacks hit the nearby mobs as well. Press it again whenever the buff runs out.</li>
+  <li><b>Recklessness</b> (and Avatar if talented): on big pulls only.</li>
+  <li><b>Odyn's Fury</b> / <b>Thunderous Roar</b>: AoE cooldowns when 3+ mobs are around you.</li>
+  <li><b>Rampage</b>: when you have enough rage (about 80+). It makes you <b>Enraged</b>, which increases your damage.</li>
+  <li><b>Bloodthirst</b>: on cooldown. It builds rage and heals you a little.</li>
+  <li><b>Raging Blow</b>: filler when the above are on cooldown.</li>
+  <li><b>Thunder Clap</b> (Mountain Thane) / <b>Whirlwind</b>: when nothing else is available.</li>
+</ol>
+
+<h3>5.3 Fury: single mob</h3>
+<ol>
+  <li><b>Charge</b> in.</li>
+  <li><b>Rampage</b> when you have the rage, to stay Enraged.</li>
+  <li><b>Execute</b> when the mob is below 20% health, or when it lights up.</li>
+  <li><b>Bloodthirst</b> on cooldown.</li>
+  <li><b>Raging Blow</b> as filler.</li>
+  <li><b>Whirlwind</b> if nothing else is ready.</li>
+</ol>
+
+<h3>5.4 Arms: group of mobs (2+)</h3>
+<ol>
+  <li><b>Sweeping Strikes</b>: always first. Your single-target hits copy onto a nearby enemy.</li>
+  <li><b>Thunder Clap</b>: hits everything around you.</li>
+  <li><b>Colossus Smash</b> or <b>Warbreaker</b> (Warbreaker hits the whole group): opens a high-damage window.</li>
+  <li><b>Bladestorm</b>: right after Colossus Smash / Warbreaker on big pulls. You spin and can't be stunned.</li>
+  <li><b>Cleave</b> (if talented) or <b>Whirlwind</b>: spend rage on groups of 3+.</li>
+  <li><b>Mortal Strike</b>: on 1–2 targets.</li>
+  <li><b>Overpower</b>: filler.</li>
+  <li><b>Execute</b> on any mob below 20%.</li>
+</ol>
+
+<h3>5.5 Arms: single mob</h3>
+<ol>
+  <li><b>Charge</b> in.</li>
+  <li><b>Colossus Smash</b> on cooldown.</li>
+  <li><b>Mortal Strike</b> on cooldown.</li>
+  <li><b>Execute</b> when the mob is below 20%, or when it lights up.</li>
+  <li><b>Overpower</b> as filler.</li>
+  <li><b>Slam</b> to spend extra rage.</li>
+</ol>
+
+<h3>5.6 Protection: dungeons</h3>
+<ol>
+  <li><b>Charge</b> or <b>Heroic Leap</b> in. Make sure everything is hitting you.</li>
+  <li><b>Thunder Clap</b> to grab threat on the whole pack.</li>
+  <li><b>Shield Slam</b> on cooldown. It's your main rage builder.</li>
+  <li><b>Shield Block</b>: keep it up against melee mobs.</li>
+  <li><b>Revenge</b>: spend extra rage on AoE damage.</li>
+  <li><b>Ignore Pain</b>: absorbs damage. Use it when you have rage left over.</li>
+  <li>Big hits incoming: <b>Shield Wall</b> or <b>Last Stand</b>.</li>
+</ol>
+
+<div class="box note"><b>Tips:</b>
+<ul>
+  <li>Highlighted (glowing) buttons mean "press me now". Blizzard's own spell glow covers most procs.</li>
+  <li>Never sit at full rage. Full rage is wasted damage, so spend it.</li>
+  <li>Save the big cooldowns (Recklessness, Avatar, Bladestorm) for pulls of 4+ mobs or elites. On a single normal mob they're wasted.</li>
+  <li>Modern WoW also has a built-in <b>Assisted Highlight</b> option (Options → Gameplay → Combat) that highlights the next ability to press. It's a good way to learn.</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="survive">6. Staying alive</h2>
+<div class="scroll">
+<table>
+  <tr><th>Need</th><th>Ability</th><th>When</th></tr>
+  <tr><td>Heal</td><td>Impending Victory / Victory Rush</td><td>Below about 70% health, or after every kill.</td></tr>
+  <tr><td>Emergency</td><td>Enraged Regeneration (Fury), Die by the Sword (Arms)</td><td>When the pull goes wrong. Use it early.</td></tr>
+  <tr><td>Extra health</td><td>Rallying Cry</td><td>Use it together with the emergency button.</td></tr>
+  <tr><td>Interrupt</td><td>Pummel</td><td>On healers and casters.</td></tr>
+  <tr><td>Reflect</td><td>Spell Reflection</td><td>Against big spells cast at you.</td></tr>
+  <tr><td>Remove mobs</td><td>Intimidating Shout, Storm Bolt</td><td>To get extra mobs off you.</td></tr>
+  <tr><td>Fear or stun break</td><td>Berserker Rage / Berserker Shout</td><td>When you're feared.</td></tr>
+  <tr><td>Buff</td><td>Battle Shout</td><td>Keep it up at all times.</td></tr>
+  <tr><td>Potion</td><td>Healing potion, Healthstone</td><td>Buy potions from the Auction House early.</td></tr>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="route">7. The route</h2>
+<div class="scroll">
+<table>
+  <tr><th>Level</th><th>Zone</th><th>Notes</th></tr>
+  <tr><td>80–83</td><td>Eversong Woods</td><td>Opening campaign, 3 chapters. Set your Hearthstone to Sanctum of Light. Mounts are disabled for part of the Sunwell intro. Finish each hub before moving on.</td></tr>
+  <tr><td>83–88</td><td>Zul'Aman, Harandar, Arator's Journey</td><td>All three are needed before Voidstorm. Do Zul'Aman first (quests closest together). Harandar has harder mobs. Arator's Journey has more travel.</td></tr>
+  <tr><td>88–90</td><td>Voidstorm</td><td>Hardest mobs, and low-gravity areas change jump height and fall damage. Most players hit 90 around Howling Ridge.</td></tr>
+</table>
+</div>
+<p>On 12.0.2, quests are your main XP. <b>Do the side quests in each hub</b>, not only the campaign.</p>
+
+<!-- ============================================================ -->
+<h2 id="dungeons">8. Dungeons</h2>
+<p>Run each one once, with its quest in your log. Queue with <kbd>I</kbd> while you quest.</p>
+<div class="scroll">
+<table>
+  <tr><th>Dungeon</th><th>Level</th></tr>
+  <tr><td>Windrunner Spire</td><td>81+</td></tr>
+  <tr><td>Murder Row</td><td>83+</td></tr>
+  <tr><td>Voidscar Arena</td><td>85+</td></tr>
+  <tr><td>Den of Nalorakk</td><td>86+ (pick up the quest chain first)</td></tr>
+  <tr><td>Nexus-Point Xenas</td><td>88+ (campaign climax)</td></tr>
+</table>
+</div>
+<div class="box note"><b>Fast queue trick:</b> queue as a <b>tank</b> (Protection). Tank queues pop almost instantly. Switch to Prot at the dungeon entrance and back to Fury or Arms afterwards.</div>
+
+<!-- ============================================================ -->
+<h2 id="xp">9. XP sources on 12.0.2</h2>
+<div class="scroll">
+<table>
+  <tr><th>Source</th><th>Available?</th><th>Notes</th></tr>
+  <tr><td>Campaign + side quests</td><td>Yes, the main source</td><td>Do every quest in each hub.</td></tr>
+  <tr><td>Rested XP</td><td>Yes</td><td>Use it early.</td></tr>
+  <tr><td>Dungeons with quest</td><td>Yes</td><td>Once each.</td></tr>
+  <tr><td>War Mode</td><td>About 15%</td><td>Other players can attack you.</td></tr>
+  <tr><td>Gathering nodes</td><td>Small</td><td>XP and gold.</td></tr>
+  <tr><td>Delves</td><td>Reduced</td><td>Their big XP buff came in 12.0.7.</td></tr>
+  <tr><td>Warband Mentor bonus</td><td>No</td><td>Needs max-level alts.</td></tr>
+  <tr><td>Darkmoon Faire +10%</td><td>Likely no</td><td>Part of the 12.0.7 changes.</td></tr>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="gear">10. Gear and gold</h2>
+<ul>
+  <li>Equip anything with higher item level. Don't worry about secondary stats until 90.</li>
+  <li>Rings and necklaces rarely drop from quests before 90. Use dungeon drops or buy them on the Auction House.</li>
+  <li>Spend gold on repairs first, then healing potions, then food and flasks for dungeons.</li>
+  <li>Gather nodes on your quest path. Sell the materials on the Auction House.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="changed">11. New since WotLK</h2>
+<div class="scroll">
+<table>
+  <tr><th>WotLK</th><th>Now</th></tr>
+  <tr><td>One talent tree per spec, with points spread around</td><td>Class tree + spec tree + hero tree. Changes are free, and you can import builds (<a href="#talents">section 3</a>).</td></tr>
+  <tr><td>Normal flying</td><td>Skyriding: fast flying based on momentum (dive, then boost).</td></tr>
+  <tr><td>Quest addons</td><td>Built-in quest tracker, map markers and Edit Mode.</td></tr>
+  <tr><td>Characters kept separate</td><td>Warband: shared bank, transmog and reputation.</td></tr>
+  <tr><td>Heroic dungeons</td><td>Delves (1–5 players with an NPC companion) and Mythic+ (timed dungeons).</td></tr>
+  <tr><td>Emblems</td><td>Crests for upgrading gear, and the Great Vault (a weekly reward chest).</td></tr>
+  <tr><td>Hit, expertise, armor penetration</td><td>Gone. The stats now are Critical Strike, Haste, Mastery and Versatility.</td></tr>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="ninety">12. At level 90</h2>
+<ul>
+  <li>Finish the campaign to unlock the endgame features in Silvermoon.</li>
+  <li>Run Heroic dungeons and delves for gear.</li>
+  <li>Do weekly activities for the Great Vault.</li>
+  <li>Switch to an endgame build: Slayer for single target, Mountain Thane for groups.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="sources">13. Sources</h2>
+<ul>
+  <li><a href="https://worldofwarcraft.blizzard.com/news/24230699">Blizzard: Level Up Your Talents in Midnight</a> (the 10 new points)</li>
+  <li><a href="https://news.blizzard.com/en-us/article/24244472/power-up-with-new-apex-talents-in-midnight">Blizzard: Apex Talents in Midnight</a></li>
+  <li><a href="https://warcraft.wiki.gg/wiki/Talent_Tree">Warcraft Wiki: Talent Tree</a></li>
+  <li><a href="https://warcraft.wiki.gg/wiki/Apex_talent">Warcraft Wiki: Apex talent</a></li>
+  <li><a href="https://icy-veins.com/wow/fury-warrior-pve-dps-easy-mode">Icy Veins: Fury Warrior Easy Mode</a></li>
+  <li><a href="https://www.icy-veins.com/fury-warrior-wow-pve-dps-rotation-cooldowns-abilities">Icy Veins: Fury Rotation (Midnight)</a></li>
+  <li><a href="https://method.gg/guides/fury-warrior/playstyle-and-rotation">Method: Fury Playstyle and Rotation</a></li>
+  <li><a href="https://www.method.gg/guides/fury-warrior/talents">Method: Fury Talents</a></li>
+  <li><a href="https://www.icy-veins.com/wow/fury-warrior-leveling-guide">Icy Veins: Fury Leveling</a> · <a href="https://icy-veins.com/wow/arms-warrior-leveling-guide">Arms Leveling</a></li>
+  <li><a href="https://icy-veins.com/wow/midnight-leveling-guide">Icy Veins: Midnight Leveling Guide</a></li>
+  <li><a href="https://games.gg/world-of-warcraft/guides/wow-midnight-leveling-guide-level-90/">Games.gg: Leveling to 90</a></li>
+  <li><a href="https://www.wowhead.com/news/official-patch-12-0-7-revelations-patch-notes-381833">Wowhead: 12.0.7 patch notes</a></li>
+</ul>
+<p class="sub">Compiled November 2026 from retail guides. Some details may differ on a private server running 12.0.2.</p>
+
+</body>
+</html>
